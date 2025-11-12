@@ -10,7 +10,7 @@ class GenerativeChatbot:
     Deals About simple conversational chatbot that maintains history using an LLM API.
     """
     def __init__(self, system_prompt: str):
-        # API Key Check (Security Best Practice)
+        # API Key Check for Security Best Practice
         self.api_key = os.getenv(API_KEY_NAME)
         if not self.api_key:
             raise ValueError(
