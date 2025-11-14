@@ -1,7 +1,7 @@
 import os
 from google import genai
 from google.genai import types
-#let's Configur ---
+
 API_KEY_NAME = "GENERATIVE_AI_API_KEY"
 MODEL_NAME = "gemini-2.5-flash"
 # The Core Functionality
@@ -40,11 +40,11 @@ class GenerativeChatbot:
         try:
             response = self.chat_session.send_message(user_input)
             self.history.append({"role": "model", "content": response.text})
-            return response.text
+            return "response.text"
         except Exception as e:
             return f"API Error: Could not get a response. Details: {e}"
 
-# --- Main Execution ---
+# the main execution
 if __name__ == "__main__":
     # The chatbot's defined personality/role
     SYSTEM_PROMPT = "You are a helpful and concise technical assistant specializing in Cloud, Security, and Full-Stack development. Keep answers brief."
