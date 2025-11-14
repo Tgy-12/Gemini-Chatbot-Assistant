@@ -50,5 +50,5 @@ b) Permanent (recommended for development): Add the export line above to your ~/
 3. Running the Chatbot
 Execute the script from your terminal:
 
-python3 llm_chatbot.py
+python3 llm_chatbot.py (optional,,if u are with python3 use this unless simply use the python---)
 The application will initialize the model and start the conversation loop. Type quit to exit.
