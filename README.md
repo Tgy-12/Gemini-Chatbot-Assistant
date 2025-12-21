@@ -1,54 +1,61 @@
-Conversational AI Assistant: Gemini API Integration
-This project implements a fully functional, memory-aware chatbot by integrating the Gemini 2.5 Flash model via the google-genai Python SDK. It serves as a practical demonstration of integrating Large Language Models (LLMs) into custom applications.
+# Conversational AI Assistant: Gemini API Integration
 
-## Key Technical Skills Demonstrated
+This project implements a fully functional, memory-aware chatbot by integrating the Gemini 2.5 Flash model via the Google Generative AI Python SDK. It serves as a practical demonstration of integrating Large Language Models (LLMs) into custom applications.
+
+## 🚀 Key Technical Skills Demonstrated
 
 This project showcases expertise in three core areas relevant to Generative AI and professional development:
 
-Generative AI & LLMs:
+### **Generative AI & LLMs**
+- **LLM Integration**: Successful connection and interaction with a state-of-the-art model (Gemini 2.5 Flash)
+- **Conversation Memory**: Utilizing the `chats.create()` session to ensure the model maintains context and history across multiple turns
+- **System Prompt Engineering**: Defining a precise persona (Cloud/Security/Full-Stack Assistant) using `system_instruction` to guide the model's behavior and tone
 
-LLM Integration: Successful connection and interaction with a state-of-the-art model (gemini-2.5-flash).
+### **Software Development Best Practices**
+- **Secure Credential Handling**: API Key is loaded securely via environment variables (`GENERATIVE_AI_API_KEY`), ensuring the key is never exposed in source code
+- **Robust Error Handling**: Implementation of `try...except` blocks to gracefully catch and report API errors (network issues, rate limits, invalid keys)
+- **Modular Design**: Clean separation of concerns with dedicated modules for configuration, chat logic, and utilities
 
-Conversation Memory: Utilizing the chats.create() session to ensure the model maintains context and history across multiple turns.
+### **Python & Cloud Infrastructure**
+- **Python Programming**: Familiarity with standard Python class structure and the `os` module for environment management
+- **Cloud API Integration**: Demonstration of connecting Python applications to cloud-based API services
+- **Dependency Management**: Proper package management using `requirements.txt`
 
-System Prompt Engineering: Defining a precise persona (Cloud/Security/Full-Stack Assistant) using system_instruction to guide the model's behavior and tone.
+## 📋 Setup and Execution
 
-Software Development Best Practices:
+### **Prerequisites**
+- Python 3.8 or higher
+- Gemini API Key (obtained from [Google AI Studio](https://makersuite.google.com/app/apikey))
+- Virtual Environment (venv, conda, or pipenv)
 
-Secure Credential Handling: API Key is loaded securely via the Linux environment variable (GENERATIVE_AI_API_KEY), ensuring the key is never exposed in the source code.
+### **1. Installation**
 
-Robust Error Handling: Implementation of try...except blocks to gracefully catch and report API errors (e.g., network issues, rate limits, invalid keys).
+Clone the repository and install dependencies:
 
-Python & Cloud Infrastructure:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/gemini-chatbot.git
+cd gemini-chatbot
 
-Familiarity with standard Python class structure and the os module for environment management.
+# Create and activate virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-Demonstration of connecting Python code to a Cloud-based API service.
+# Install required package
+pip install google-generativeai
+```
+## 🔑 API Key Configuration
 
-## Setup and Execution
-Prerequisites
-Python 3.8+ and above
+### **Linux/macOS**
+**Temporary (current terminal session):**
+```bash
+export GENERATIVE_AI_API_KEY='your-actual-api-key-here'
+```
+###Runing
+```command
+# Run the chatbot
+python llm_chatbot.py
 
-Gemini API Key: Obtained from Google AI Studio.
-
-Active Virtual Environment (e.g., using venv or conda).
-
-1. Installation
-Activate your virtual environment and install the required library:
-
-
-pip install google-genai
-2. API Key Configuration (Linux/macOS)
-For the script to run, your API key must be set as an environment variable named GENERATIVE_AI_API_KEY.
-
-a) Temporary (for current terminal session):
-
-
-export GENERATIVE_AI_API_KEY='[YOUR_ACTUAL_API_KEY]'
-b) Permanent (recommended for development): Add the export line above to your ~/.bashrc or ~/.zshrc file and run source ~/.zshrc.
-
-3. Running the Chatbot
-Execute the script from your terminal:
-
-python3 llm_chatbot.py (optional,,if u are with python3 use this unless simply use the python---)
-The application will initialize the model and start the conversation loop. Type quit to exit.
+# Alternatively, if you have python3 as your command
+python3 llm_chatbot.py
+```
